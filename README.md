@@ -1,5 +1,15 @@
 
-# Main Experiments
+# Latent Space Editing in Transformer-based Flow Matching (AAAI 2024)
+
+```
+@inproceedings{hulfm,
+        title = {Latent Space Editing in Transformer-based Flow Matching},
+        author = {Hu, Tao and Zhang, David W and Mettes, Pascal and Tang, Meng and Zhao, Deli and Snoek, Cees G.M.},
+        year = {2024},
+        booktitle = {AAAI},
+      }
+```
+
 ## Local-Prompt 
 
 Adding(Sequentially), Replacing, Rescaling
@@ -76,10 +86,6 @@ stable-diffusion, need the Encoder-Decoder weight
 
 ## Environment Preparation
 
-```
-python 3.10
-torch2.0
-```
 
 
 ```
