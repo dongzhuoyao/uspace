@@ -1,6 +1,10 @@
 
 # Latent Space Editing in Transformer-based Flow Matching (AAAI 2024)
 
+[![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://taohu.me/lfm/)
+[![Paper](https://img.shields.io/badge/arXiv-PDF-b31b1b)](https://arxiv.org/abs/2312.10825)
+
+
 ```
 @inproceedings{hulfm,
         title = {Latent Space Editing in Transformer-based Flow Matching},
