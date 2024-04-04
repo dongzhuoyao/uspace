@@ -1,9 +1,24 @@
 
-# Latent Space Editing in Transformer-based Flow Matching (AAAI 2024)
+# Latent Space Editing in Transformer-based Flow Matching
 
-[![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://taohu.me/lfm/)
-[![Paper](https://img.shields.io/badge/arXiv-PDF-b31b1b)](https://arxiv.org/abs/2312.10825)
+<span class="author-block">
+                <a href="http://taohu.me" target="_blank">Vincent Tao HU</a>,</span>
+                <span class="author-block">
+                  <a href="https://davzha.netlify.app/" target="_blank">David W Zhang</a>,</span>
+                  <span class="author-block">
+                    <a href="https://staff.fnwi.uva.nl/p.s.m.mettes/" target="_blank">Pascal Mettes</a>,
+                  </span>
+                  <span class="author-block">
+                    <a href="http://mengtang.org/" target="_blank">Meng Tang</a>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=7LhjCn0AAAAJ&hl=en" target="_blank">Deli Zhao</a>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://www.ceessnoek.info/" target="_blank">Cees G.M. Snoek</a>
+                  </span>
 
+ **AAAI 2024**
 
 ```
 @inproceedings{hulfm,
@@ -12,32 +27,41 @@
         year = {2024},
         booktitle = {AAAI},
       }
-```
+```       
 
-## Local-Prompt 
+[![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://taohu.me/lfm/)
+[![Paper](https://img.shields.io/badge/arXiv-PDF-b31b1b)](https://arxiv.org/abs/2312.10825)
+
+
+
+### Local-Prompt 
 
 Adding(Sequentially), Replacing, Rescaling
-```
+
+```bash
 python dissect_lfm_t2i.py 
 ```
 
 
 
-## Semantic Direction Manipulation
+### Semantic Direction Manipulation
 
-step1: feature collection
-```
+step1: semantic direction collection
+
+```bash
 python dissect_lfm.py 
-
 ```
+
 
 step2:generate the semantic direction
-```
+
+```bash
 python tools/utils_attr.py
 ```
 
 step3:semantic steering
-```
+
+```bash
 python dissect_lfm.py 
 ```
 
@@ -48,11 +72,9 @@ python dissect_lfm.py
 
 ### CelebAMask256
 
-
 ```  
 CUDA_VISIBLE_DEVICES=4,5,6,7  accelerate launch --multi_gpu --num_processes 4 --mixed_precision fp16 train_lfm.py --config=configs/lfm_cm256_uvit_large.py --config.train.batch_size=512
 ```
-
 
 
 ### MM-Celeba_HQ
@@ -80,19 +102,19 @@ CUDA_VISIBLE_DEVICES=4,5,6,7  accelerate launch --multi_gpu --num_processes 4 --
 ```
 
 
-## Prepare ./assets following U-ViT repo
+### Prepare ./assets
 
-[https://github.com/baofff/U-ViT](https://github.com/baofff/U-ViT)
+following [U-ViT](https://github.com/baofff/U-ViT)
 
-fid_stats, a dummy file
-pretrained_weights, for initialization and fine-tunig
-stable-diffusion, need the Encoder-Decoder weight
-
-## Environment Preparation
+- fid_stats, a dummy file
+- pretrained_weights, for initialization and fine-tunig
+-  stable-diffusion, need the Encoder-Decoder weight
 
 
+# Environment Preparation
 
-```
+
+```bash
 conda create -n lfmuvit  python=3.10
 conda install -c "nvidia/label/cuda-11.8.0" cuda-toolkit
 conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
@@ -100,11 +122,7 @@ pip install pytorch-lightning torchdiffeq  matplotlib h5py timm diffusers accele
 pip install hydra-core wandb einops scikit-learn --upgrade
 pip install einops sklearn
 pip install transformers==4.23.1 pycocotools # for text-to-image task
-
 ```
-
-
-
 
 
 
