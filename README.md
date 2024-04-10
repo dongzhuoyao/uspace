@@ -115,7 +115,7 @@ following [U-ViT](https://github.com/baofff/U-ViT)
 
 
 ```bash
-conda create -n lfmuvit  python=3.10
+conda create -n uspace  python=3.10
 conda install -c "nvidia/label/cuda-11.8.0" cuda-toolkit
 conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
 pip install pytorch-lightning torchdiffeq  matplotlib h5py timm diffusers accelerate loguru blobfile ml_collections
